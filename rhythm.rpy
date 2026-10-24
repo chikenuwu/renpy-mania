@@ -435,6 +435,8 @@ init 10 python:
 
 # RENDERING + UI
 screen rhythm_game():
+
+    key "game_menu" action ShowMenu("preferences", rhythm_pause=True)
     
     fixed:
         xalign 0.5

@@ -6,9 +6,12 @@
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 default fps = 60.0
 default rg_approach_ms = 500
-screen preferences():
+screen preferences(rhythm_pause=False):
 
     tag menu
+
+    on "show" action If(rhythm_pause, PauseAudio("music", True), NullAction())
+    on "hide" action If(rhythm_pause, PauseAudio("music", False), NullAction())
 
     use game_menu(_("Preferences"), scroll="viewport"):
 
